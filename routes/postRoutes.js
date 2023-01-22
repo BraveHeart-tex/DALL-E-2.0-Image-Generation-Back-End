@@ -13,7 +13,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// GET /api/v1/posts
+// GET /api/v1/post
 router.route('/').get(async (req, res) => {
   try {
     const posts = await Post.find({});
@@ -26,7 +26,7 @@ router.route('/').get(async (req, res) => {
   }
 });
 
-// POST /api/v1/posts
+// POST /api/v1/post
 router.post('/', async (req, res) => {
   try {
     const { name, prompt, photo } = req.body;
